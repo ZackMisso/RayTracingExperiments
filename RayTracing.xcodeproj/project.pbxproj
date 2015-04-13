@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE651F171AD8C59900ECB87F /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE651F151AD8C59900ECB87F /* Sphere.cpp */; };
+		DE651F1A1AD8CC0D00ECB87F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE651F181AD8CC0D00ECB87F /* Entity.cpp */; };
+		DE651F1D1AD8CDEE00ECB87F /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE651F1B1AD8CDEE00ECB87F /* Plane.cpp */; };
+		DE74311C1ADA1EC7000F762F /* Source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE74311A1ADA1EC7000F762F /* Source.cpp */; };
 		DE8CC1351ABE52B800603092 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE8CC1341ABE52B800603092 /* main.cpp */; };
+		DE8CC13C1ABE52E900603092 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8CC13B1ABE52E900603092 /* OpenGL.framework */; };
+		DE8CC13F1ABE7DEC00603092 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE8CC13D1ABE7DEC00603092 /* Vector3.cpp */; };
+		DE8CC1421ABE7EA800603092 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE8CC1401ABE7EA800603092 /* Ray.cpp */; };
+		DE8CC1451ABE7FB100603092 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE8CC1431ABE7FB100603092 /* Camera.cpp */; };
+		DEAA02491AC4C4EB0035C9E9 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAA02471AC4C4EB0035C9E9 /* Color.cpp */; };
+		DEAA024C1AC4C76A0035C9E9 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEAA024A1AC4C76A0035C9E9 /* Light.cpp */; };
+		DEDA3B531ADC6CF000969AA0 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEDA3B511ADC6CF000969AA0 /* Scene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +34,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE651F151AD8C59900ECB87F /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
+		DE651F161AD8C59900ECB87F /* Sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sphere.h; sourceTree = "<group>"; };
+		DE651F181AD8CC0D00ECB87F /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		DE651F191AD8CC0D00ECB87F /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		DE651F1B1AD8CDEE00ECB87F /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
+		DE651F1C1AD8CDEE00ECB87F /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
+		DE74311A1ADA1EC7000F762F /* Source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Source.cpp; sourceTree = "<group>"; };
+		DE74311B1ADA1EC7000F762F /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
 		DE8CC1311ABE52B700603092 /* RayTracing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTracing; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8CC1341ABE52B800603092 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DE8CC13B1ABE52E900603092 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		DE8CC13D1ABE7DEC00603092 /* Vector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; };
+		DE8CC13E1ABE7DEC00603092 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		DE8CC1401ABE7EA800603092 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ray.cpp; sourceTree = "<group>"; };
+		DE8CC1411ABE7EA800603092 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ray.h; sourceTree = "<group>"; };
+		DE8CC1431ABE7FB100603092 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		DE8CC1441ABE7FB100603092 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		DEAA02471AC4C4EB0035C9E9 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		DEAA02481AC4C4EB0035C9E9 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		DEAA024A1AC4C76A0035C9E9 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		DEAA024B1AC4C76A0035C9E9 /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
+		DEDA3B511ADC6CF000969AA0 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		DEDA3B521ADC6CF000969AA0 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8CC13C1ABE52E900603092 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +74,7 @@
 		DE8CC1281ABE52B700603092 = {
 			isa = PBXGroup;
 			children = (
+				DE8CC13B1ABE52E900603092 /* OpenGL.framework */,
 				DE8CC1331ABE52B700603092 /* RayTracing */,
 				DE8CC1321ABE52B700603092 /* Products */,
 			);
@@ -58,6 +92,26 @@
 			isa = PBXGroup;
 			children = (
 				DE8CC1341ABE52B800603092 /* main.cpp */,
+				DEDA3B511ADC6CF000969AA0 /* Scene.cpp */,
+				DEDA3B521ADC6CF000969AA0 /* Scene.h */,
+				DE8CC13D1ABE7DEC00603092 /* Vector3.cpp */,
+				DE8CC13E1ABE7DEC00603092 /* Vector3.h */,
+				DE8CC1401ABE7EA800603092 /* Ray.cpp */,
+				DE8CC1411ABE7EA800603092 /* Ray.h */,
+				DE8CC1431ABE7FB100603092 /* Camera.cpp */,
+				DE8CC1441ABE7FB100603092 /* Camera.h */,
+				DEAA02471AC4C4EB0035C9E9 /* Color.cpp */,
+				DEAA02481AC4C4EB0035C9E9 /* Color.h */,
+				DEAA024A1AC4C76A0035C9E9 /* Light.cpp */,
+				DEAA024B1AC4C76A0035C9E9 /* Light.h */,
+				DE651F151AD8C59900ECB87F /* Sphere.cpp */,
+				DE651F161AD8C59900ECB87F /* Sphere.h */,
+				DE651F181AD8CC0D00ECB87F /* Entity.cpp */,
+				DE651F191AD8CC0D00ECB87F /* Entity.h */,
+				DE651F1B1AD8CDEE00ECB87F /* Plane.cpp */,
+				DE651F1C1AD8CDEE00ECB87F /* Plane.h */,
+				DE74311A1ADA1EC7000F762F /* Source.cpp */,
+				DE74311B1ADA1EC7000F762F /* Source.h */,
 			);
 			path = RayTracing;
 			sourceTree = "<group>";
@@ -118,6 +172,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE651F1A1AD8CC0D00ECB87F /* Entity.cpp in Sources */,
+				DEAA024C1AC4C76A0035C9E9 /* Light.cpp in Sources */,
+				DE8CC1451ABE7FB100603092 /* Camera.cpp in Sources */,
+				DE651F1D1AD8CDEE00ECB87F /* Plane.cpp in Sources */,
+				DE8CC1421ABE7EA800603092 /* Ray.cpp in Sources */,
+				DEAA02491AC4C4EB0035C9E9 /* Color.cpp in Sources */,
+				DEDA3B531ADC6CF000969AA0 /* Scene.cpp in Sources */,
+				DE651F171AD8C59900ECB87F /* Sphere.cpp in Sources */,
+				DE8CC13F1ABE7DEC00603092 /* Vector3.cpp in Sources */,
+				DE74311C1ADA1EC7000F762F /* Source.cpp in Sources */,
 				DE8CC1351ABE52B800603092 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +266,13 @@
 		DE8CC1391ABE52B800603092 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/include,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/glfw3/3.1/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +280,13 @@
 		DE8CC13A1ABE52B800603092 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/include,
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/glfw3/3.1/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -232,6 +310,7 @@
 				DE8CC13A1ABE52B800603092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
