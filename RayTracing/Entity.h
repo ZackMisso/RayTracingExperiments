@@ -18,9 +18,10 @@ class Entity{
 private:
 public:
     Entity();
-    virtual Color getColor();
-    virtual Vector3 getNormalAt(Vector3 point);
-    virtual number findIntersection(Ray ray);
+    virtual Color getColor()=0;
+    virtual Vector3 getNormalAt(Vector3 point)=0;
+    virtual number findIntersection(Ray *ray)=0;
+    void test();
 };
 
 #endif /* defined(__RayTracing__Entity__) */

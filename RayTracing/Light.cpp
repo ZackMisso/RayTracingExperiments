@@ -14,10 +14,6 @@ Light::Light():position(Vector3(0,0,0)),color(Color()){
 Light::Light(Vector3 pos,Color col):position(pos),color(col){
 }
 
-Vector3 Light::getLightPosition(){
-    return position;
-}
-
-Color Light::getColor(){
-    return color;
-}
+// getter methods
+Vector3 Light::getLightPosition(){return position;}
+Color Light::getColor(){return color;}

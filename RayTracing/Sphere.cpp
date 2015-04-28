@@ -14,12 +14,12 @@ Sphere::Sphere():position(Vector3(0,0,0)),radius(1.0f),color(Color(0.5f,0.5f,0.5
 Sphere::Sphere(Vector3 pos,Color col,number r):position(pos),color(col),radius(r){
 }
 
-number Sphere::findIntersection(Ray ray){
-    Vector3 rayOrigin=ray.getOrigin();
+number Sphere::findIntersection(Ray *ray){
+    Vector3 rayOrigin=ray->getOrigin();
     number rayOriginX=rayOrigin.getX();
     number rayOriginY=rayOrigin.getY();
     number rayOriginZ=rayOrigin.getZ();
-    Vector3 rayDirection=ray.getDirection();
+    Vector3 rayDirection=ray->getDirection();
     number rayDirectionX=rayDirection.getX();
     number rayDirectionY=rayDirection.getY();
     number rayDirectionZ=rayDirection.getZ();
@@ -55,14 +55,7 @@ Vector3 Sphere::getNormalAt(Vector3 point){
     return normal;
 }
 
-Vector3 Sphere::getPosition(){
-    return position;
-}
-
-Color Sphere::getColor(){
-    return color;
-}
-
-number Sphere::getRadius(){
-    return radius;
-}
+// getter methods
+Vector3 Sphere::getPosition(){return position;}
+Color Sphere::getColor(){return color;}
+number Sphere::getRadius(){return radius;}

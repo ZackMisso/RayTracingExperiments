@@ -11,10 +11,14 @@
 Vector3::Vector3(number x,number y,number z):x(x),y(y),z(z){
 }
 
+// identity vectors
+Vector3 Vector3::O(){return Vector3(0,0,0);}
+Vector3 Vector3::X(){return Vector3(1,0,0);}
+Vector3 Vector3::Y(){return Vector3(0,1,0);}
+Vector3 Vector3::Z(){return Vector3(0,0,1);}
+
 Vector3 Vector3::normalize(){
-    //Vector3 newVec;
     number mag=sqrt(x*x+y*y+z*z);
-    //mag=sqrt(mag);
     return Vector3(x/mag,y/mag,z/mag);
 }
 

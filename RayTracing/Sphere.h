@@ -23,10 +23,10 @@ public:
     Sphere();
     Sphere(Vector3 pos,Color col,number r);
     Vector3 getPosition();
-    virtual Color getColor();
+    Color getColor();
     number getRadius();
-    virtual number findIntersection(Ray ray);
-    virtual Vector3 getNormalAt(Vector3 point);
+    number findIntersection(Ray *ray);
+    Vector3 getNormalAt(Vector3 point);
 };
 
 #endif /* defined(__RayTracing__Sphere__) */

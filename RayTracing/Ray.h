@@ -16,16 +16,9 @@ class Ray{
 private:
     Vector3 origin;
     Vector3 direction;
-    //float x;
-    //float y;
-    //float z;
 public:
-    //Ray(float x,float y,float z);
     Ray();
     Ray(Vector3 origin,Vector3 direction);
-    //float getX(){return x;}
-    //float getY(){return y;}
-    //float getZ(){return z;}
     Vector3 getOrigin(){return origin;}
     Vector3 getDirection(){return direction;}
 };

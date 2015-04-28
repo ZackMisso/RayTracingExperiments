@@ -35,6 +35,11 @@ public:
     void setGreen(number g);
     void setBlue(number b);
     void setSpecial(number s);
+    static Color whiteLight();
+    static Color niceGreen();
+    static Color maroon();
+    static Color grey();
+    static Color black();
 };
 
 #endif /* defined(__RayTracing__Color__) */

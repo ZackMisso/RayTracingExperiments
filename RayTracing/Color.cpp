@@ -53,38 +53,23 @@ Color Color::clip(){
     return Color(red,green,blue,special);
 }
 
-number Color::getRed(){
-    return red;
-}
+number Color::brightness(){return (red+green+blue)/3;}
 
-number Color::getGreen(){
-    return green;
-}
+// pre-set Colors
+Color Color::whiteLight(){return Color(1.0f,1.0f,1.0f,0.0f);}
+Color Color::niceGreen(){return Color(.5f,1.0f,.5f,.3f);}
+Color Color::maroon(){return Color(.5f,.25f,.25f,0);}
+Color Color::grey(){return Color(.5f,.5f,.5f,0.0f);}
+Color Color::black(){return Color(0.0f,0.0f,0.0f,0.0f);}
 
-number Color::getBlue(){
-    return blue;
-}
+// getter methods
+number Color::getRed(){return red;}
+number Color::getGreen(){return green;}
+number Color::getBlue(){return blue;}
+number Color::getSpecial(){return special;}
 
-number Color::getSpecial(){
-    return special;
-}
-
-number Color::brightness(){
-    return (red+green+blue)/3;
-}
-
-void Color::setRed(number r){
-    red=r;
-}
-
-void Color::setGreen(number g){
-    green=g;
-}
-
-void Color::setBlue(number b){
-    blue=b;
-}
-
-void Color::setSpecial(number s){
-    special=s;
-}
+// setter methods
+void Color::setRed(number r){red=r;}
+void Color::setGreen(number g){green=g;}
+void Color::setBlue(number b){blue=b;}
+void Color::setSpecial(number s){special=s;}

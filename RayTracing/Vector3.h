@@ -19,6 +19,10 @@ private:
     number y;
     number z;
 public:
+    static Vector3 O();
+    static Vector3 X();
+    static Vector3 Y();
+    static Vector3 Z();
     Vector3(number x,number y,number z);
     Vector3 normalize();
     Vector3 negative();

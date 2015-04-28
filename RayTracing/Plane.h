@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "Entity.h"
-//typedef float number;
 
 class Plane : public Entity{
     Vector3 normal;
@@ -21,10 +20,10 @@ public:
     Plane();
     Plane(Vector3 norm,Color col,number dist);
     Vector3 getPlaneNormal();
-    virtual Vector3 getNormalAt(Vector3 point);
-    virtual Color getColor();
+    Vector3 getNormalAt(Vector3 point);
+    Color getColor();
     number getDistance();
-    virtual number findIntersection(Ray ray);
+    number findIntersection(Ray *ray);
 };
 
 #endif /* defined(__RayTracing__Plane__) */
