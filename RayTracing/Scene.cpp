@@ -14,7 +14,6 @@
 
 
 Scene::Scene(){
-    std::cout<<"Called\n";
     initializeDefaults();
 }
 
@@ -34,22 +33,31 @@ void Scene::initializeDefaults(){
     accuracy=.0000001;
     Vector3 campos(3,1.5f,-4);
     Vector3 lookAt(0,0,0);
-    Vector3 diffBtw(campos.getX()-lookAt.getX(),campos.getY()-lookAt.getY(),campos.getZ()-lookAt.getZ());
-    Vector3 camDir=diffBtw.negative().normalize();
+    // get the vector from where the camera is looking to the camera
+    Vector3 diffBtw(lookAt.getX()-campos.getX(),lookAt.getY()-campos.getY(),lookAt.getZ()-campos.getZ());
+    Vector3 camDir=diffBtw.normalize();
+    // get the vector perpendicular to the camera direction and y identity vector
+    // i.e, the vector going to the side from the camera direction
     Vector3 camRight=Vector3::Y().cross(camDir).normalize();
+    // get the vector perpendicular to the camera, the right of the camera, and the y identity vector
+    // i.e. the vector going down from he camera direction
     Vector3 camDown=camRight.cross(camDir);
+    // create the camera
     camera=new Camera(campos,camDir,camRight,camDown);
-    Vector3 lightPosition(10,20,-7);
+    // create the light
+    Vector3 lightPosition(-7,10,-7);
     Light *sceneLight=new Light(lightPosition,Color::whiteLight());
     lightSources->at(0)=dynamic_cast<Source*>(sceneLight);
+    // create the scene entities
     Sphere *sphere=new Sphere(Vector3::O(),Color::niceGreen(),1.0f);
-    Plane *floor=new Plane(Vector3::Y(),Color::maroon(),-1.0f);
+    Plane *floor=new Plane(Vector3::Y(),Color::maroon(),1.0f);
     pixels=new RGBPixel[width*height];
     sceneEntities->at(0)=dynamic_cast<Entity*>(sphere);
     sceneEntities->at(1)=dynamic_cast<Entity*>(floor);
 }
 
 void Scene::saveAsBMP(const char *fileName,int width,int height,int dpi,RGBPixel *data){
+    // draws the image and saves it to a file
     FILE *file;
     int area=width*height;
     int s=area*4;
@@ -100,45 +108,17 @@ void Scene::saveAsBMP(const char *fileName,int width,int height,int dpi,RGBPixel
 }
 
 int Scene::winningObjectIndex(std::vector<number> entity_intersections){
-    // return the index of the winning intersection
-    // prevent unnecessary calculations
-    //if(entity_intersections.size()==0)
-    //    // if there are no intersections
-    //    return -1;
-    //else if(entity_intersections.size()==1){
-    //    if(entity_intersections.at(0)>0)
-    //        // if intersection is > 0 then this is it
-    //        return 0;
-    //    else
-    //        return -1;
-    //
-    //}else{
-        // otherwise there is more than one intersection
-        // first find the max value;
     number max=-1.0f;
     std::vector<number>::iterator itr=entity_intersections.begin();
     int num=0;
-    for(;itr!=entity_intersections.end();itr++,num++){
-    //for(int i=0;i<entity_intersections.size();i++)
+    for(;itr!=entity_intersections.end();itr++,num++)
         if((max>*itr&&*itr>0)||max<0.0f){
             max=*itr;
             indexOfMinValue=num;
         }
-        //num++;
-    }
     if(max>0)
         return indexOfMinValue;
     return -1;
-    //    if(max>0){
-    //        for(int i=0;i<entity_intersections.size();i++)
-    //            if(entity_intersections.at(i)<=max&&entity_intersections.at(i)>0){
-    //                max=entity_intersections.at(i);
-    //               indexOfMinValue=i;
-    //            }
-    //        return indexOfMinValue;
-    //    }
-    //    return -1;
-    //}
 }
 
 
@@ -189,11 +169,8 @@ Color Scene::getColorAt(Vector3 intersectionPos,Vector3 intersectingRayDirection
 void Scene::render(){
     number xamnt=0.0f;
     number yamnt=0.0f;
-    //RGBPixel *pixels=new RGBPixel[width*height];
-    //std::cout<<"Starting to render\n";
     for(int x=0;x<width;x++){
         for(int y=0;y<height;y++){
-            //std::cout<<"Second for loop\n";
             // start with no anti-aliasing
             // these branches could be very inefficient later on.
             if(width>height){
@@ -210,42 +187,10 @@ void Scene::render(){
             Vector3 cameraRayDirection=camera->getCameraDir().add(camera->getCameraRight().mult(xamnt-.5f).add(camera->getCameraDown().mult(yamnt-.5f))).normalize();
             Ray *cameraRay=new Ray(cameraRayOrigin,cameraRayDirection);
             std::vector<number> intersections(sceneEntities->size());
-            //std::cout<<"It Made IT HRere\n";
             int index=0;
             std::vector<Entity*>::iterator itr=sceneEntities->begin();
-            for(;itr!=sceneEntities->end();itr++,index++){
-                //std::cout<<"Running\n";
-                ///////////// Debugging code ///////////////
-                //Entity* blah=sceneEntities->at(index);
-                //if(blah==NULL||blah==0x0||&sceneEntities==0x0)
-                //    std::cout<<" This should not happen\n";
-                //blah->test();
-                //std::cout<<"Entity :: ";
-                //std::cout<<&itr;
-                //std::cout<<"\n";
-                //std::cout<<"Intersections :: ";
-                //std::cout<<&intersections;
-                //std::cout<<"\n";
-                //std::cout<<"CameraRay :: ";
-                //std::cout<<&cameraRay;
-                //std::cout<<"\n";
-                //std::cout<<"Camera :: ";
-                //std::cout<<&camera;
-                //std::cout<<"\n";
-                //std::cout<<"SceneEntities :: ";
-                //std::cout<<&sceneEntities;
-                //std::cout<<"\n";
-                //blah->findIntersection(cameraRay);
-                //number num=camera.getCameraPos().getX();
-                //num+=3;
-                //number num2=camera.getCameraRight().getY();
-                //Vector3 ss=cameraRay.getDirection();
-                //number numss=ss.getY();
-                //num2+=num;
-                ////////////////////////////////////////////
-                //number num=intersections.at(0);
+            for(;itr!=sceneEntities->end();itr++,index++)
                 intersections.at(index)=((*itr)->findIntersection(cameraRay));
-            }
             int indexOfMajorObject=winningObjectIndex(intersections);
             temp=y*width+x;
             if(indexOfMajorObject==-1){
@@ -267,9 +212,7 @@ void Scene::render(){
         }
     }
     std::cout<<"Drawing Image\n";
-    std::cout<<width<<" Width\n";
-    std::cout<<height<<" Hidth\n";
-    saveAsBMP("picTake6.bmp",width,height,72,pixels);
+    saveAsBMP("picTake9.bmp",width,height,72,pixels);
     std::cout<<"Drew Image\n";
 }
 

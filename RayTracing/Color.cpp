@@ -61,6 +61,9 @@ Color Color::niceGreen(){return Color(.5f,1.0f,.5f,.3f);}
 Color Color::maroon(){return Color(.5f,.25f,.25f,0);}
 Color Color::grey(){return Color(.5f,.5f,.5f,0.0f);}
 Color Color::black(){return Color(0.0f,0.0f,0.0f,0.0f);}
+Color Color::redColor(){return Color(1.0f,0.0f,0.0f,0.0f);}
+Color Color::greenColor(){return Color(0.0f,1.0f,0.0f,0.0f);}
+Color Color::blueColor(){return Color(0.0f,0.0f,1.0f,0.0f);}
 
 // getter methods
 number Color::getRed(){return red;}

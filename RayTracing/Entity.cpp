@@ -10,20 +10,3 @@
 
 Entity::Entity(){
 }
-
-//Color Entity::getColor(){
-//    return Color(0.0f,0.0f,0.0f,0.0f);
-//}
-
-//number Entity::findIntersection(Ray ray){
-//
-//    return 0.0;
-//}
-
-//Vector3 Entity::getNormalAt(Vector3 point){
-//    return Vector3(0,0,0);
-//}
-
-void Entity::test(){
-    // does nothing -- trying to find a bug
-}

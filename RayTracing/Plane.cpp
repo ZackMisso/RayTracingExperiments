@@ -21,12 +21,20 @@ Vector3 Plane::getNormalAt(Vector3 point){
 number Plane::findIntersection(Ray *ray){
     Vector3 rayDirection=ray->getDirection();
     number a=rayDirection.dot(normal);
-    if(a==0){
-        // ray is parallel to the plane
+    if(a==0)
+        // ray is perpendicular to the plane if the dot product is zero
         return -1;
-    }
     else{
-        number b=normal.dot(ray->getOrigin().add(normal.mult(distance).negative()));
+        // why am I doing this again? This is doing nothing... Distiance is always -1...
+        // nevermind, this is used for calculating the extra distance from the origin of the ray to the location of the plane.
+        // in the future I should look into representing planes differently to avoid this... Adding a origin vector would be more efficient
+        // This would not work for planes that are not axis-aligned
+        Vector3 temp = normal.mult(distance);
+        // add distance from world space origin to plane to the origin of the ray
+        temp = ray->getOrigin().add(temp);
+        // get the dot product between the normal and the vector to the origin of the plane
+        number b = normal.dot(temp);
+        //b=normal.dot(ray->getOrigin().add(normal.mult(distance).negative()));
         return -1*b/a;
     }
 }

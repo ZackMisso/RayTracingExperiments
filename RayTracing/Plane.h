@@ -15,7 +15,7 @@
 class Plane : public Entity{
     Vector3 normal;
     Color color;
-    number distance;
+    number distance; // what is distance? Why am I using it???
 public:
     Plane();
     Plane(Vector3 norm,Color col,number dist);

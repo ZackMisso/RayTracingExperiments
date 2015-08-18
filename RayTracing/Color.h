@@ -40,6 +40,9 @@ public:
     static Color maroon();
     static Color grey();
     static Color black();
+    static Color redColor();
+    static Color blueColor();
+    static Color greenColor();
 };
 
 #endif /* defined(__RayTracing__Color__) */

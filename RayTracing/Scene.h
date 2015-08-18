@@ -36,7 +36,6 @@ private:
     number ambientLight;
     number accuracy;
     Camera *camera;
-    //RBGPixels pixels;
     int width;
     int height;
     int temp; // ? Why ?
@@ -49,7 +48,6 @@ public:
     int winningObjectIndex(std::vector<number> entity_intersections);
     Color getColorAt(Vector3 intersectionPos,Vector3 intersectingRayDirection);
     void render();
-    // getter methods
     
     // setter methods
     void setLightSources(std::vector<Source*> *param);

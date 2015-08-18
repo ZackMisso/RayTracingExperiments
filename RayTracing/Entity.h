@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "Ray.h"
-//#include "Vector3.h"
 #include "Color.h"
 
 class Entity{
@@ -21,7 +20,6 @@ public:
     virtual Color getColor()=0;
     virtual Vector3 getNormalAt(Vector3 point)=0;
     virtual number findIntersection(Ray *ray)=0;
-    void test();
 };
 
 #endif /* defined(__RayTracing__Entity__) */

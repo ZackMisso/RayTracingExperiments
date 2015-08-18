@@ -23,11 +23,9 @@ number Sphere::findIntersection(Ray *ray){
     number rayDirectionX=rayDirection.getX();
     number rayDirectionY=rayDirection.getY();
     number rayDirectionZ=rayDirection.getZ();
-    //Vector3 sphereCenter=position;
     number sphereCenterX=position.getX();
     number sphereCenterY=position.getY();
     number sphereCenterZ=position.getZ();
-    //float a=1;
     number b=(2*(rayOriginX-sphereCenterX)*rayDirectionX);
     b+=(2*(rayOriginY-sphereCenterY)*rayDirectionY);
     b+=(2*(rayOriginZ-sphereCenterZ)*rayDirectionZ);
